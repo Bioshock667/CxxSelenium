@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build CppSelenium (Debug)",
+        "type": "shell",
+        "command": "bazel build :CppSeleniumTest -c dbg",
+        "windows": {
+          "command": "bazel build :CppSeleniumTest --experimental_enable_runfiles -c dbg"
+        },
+        "osx": {
+          "command": "bazel build :CppSeleniumTest -c dbg --spawn_strategy=standalone",
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+      },
+      {
+        "label": "Build CppSelenium",
+        "type": "shell",
+        "command": "bazel build :CppSeleniumTest",
+        "windows": {
+          "command": "bazel build :CppSeleniumTest"
+        },
+        "osx": {
+          "command": "bazel build :CppSeleniumTest",
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+      }
+    ]
+  }
